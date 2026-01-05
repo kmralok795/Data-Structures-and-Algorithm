@@ -25,7 +25,9 @@ class Main{
   }
   public static void main(String ar[]){
     int[] nums={4,5,6,7,0,1,2};
+    int[] nums1={6,7,0,1,2,3,4,5};
     System.out.println("Minimum in rotated sorted array: "+minimumInRotatedSortedArray(nums, 0));
     System.out.println("Minimum in rotated sorted array: "+minimumInRotatedSortedArray(nums, 3));
+    System.out.println("Minimum in rotated sorted array: "+minimumInRotatedSortedArray(nums1, 4));
   }
 }
