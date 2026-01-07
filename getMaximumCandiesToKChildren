@@ -1,0 +1,71 @@
+// class Main{
+//   public static int maxCandies(int[] candies, int k){
+//     int max=0;
+//     for(int c: candies){
+//       max=Math.max(c, max);
+//     }
+    
+//     for(int x=max; x>=1; x--){
+//       long count=0;
+//       for(int c: candies){
+//         count+=c/x;
+//       }
+       
+//       if(count>=k){
+//         return x;
+//       }
+//     }return 0;
+//   }
+//   public static void main(String ar[]){
+//     int[] candies={5, 8, 6};
+//     System.out.println("Maximum candies: "+maxCandies(candies, 5));
+//   }
+// }
+
+
+
+
+
+
+class Main{
+  
+  public static int maxCandies(int[] candies, int k){
+    int low=1; 
+    int high=getMaxCandies(candies);
+    int ans=0;
+    
+    int total=0;
+    for(int t:candies){
+      total+=t;
+    }
+    if(total<k){
+      return 0;
+    }
+    
+    
+    while(low<=high){
+      int mid=low+(high-low)/2;
+      long children=0;
+      for(int c:candies){
+        children+=c/mid;
+      }
+      
+      if(children>=k){
+        ans=mid;
+        low=mid+1;
+      }else{
+        high=mid-1;
+      }
+    }return ans;
+  }
+  public static int getMaxCandies(int[] candies){
+    int max=candies[0];
+    for(int c:candies){
+      max=Math.max(c, max);
+    }return max;
+  } 
+  public static void main(String ar[]){
+    int[] candies={5, 8, 6};
+    System.out.println("Maximum candies: "+maxCandies(candies, 5));
+  }
+}
