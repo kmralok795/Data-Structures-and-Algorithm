@@ -1,0 +1,36 @@
+class Main{
+  public static boolean sumOfSquareNumbersBrute(int num){
+    int limit=(int)Math.sqrt(num);
+    for(int i=0; i<=limit; i++){
+       for(int j=0; j<=limit; j++){
+         if(i*i+j*j==num){
+           return true;
+         }
+       }
+    }return false;
+  }
+  
+  public static boolean sumOfSquareNumbersOptimal(int num){
+    int limit=(int)Math.sqrt(num);
+    int low=0;
+    int high=limit;
+    while(low<=high){
+      int sum=low*low+high*high;
+      if(sum==num){
+        return true;
+      }else if(sum<num){
+        low++;
+      }else{
+        high--;
+      }
+    }return false;
+  }
+  public static void main(String ar[]){
+    System.out.println("Sum of Square Numbers: "+sumOfSquareNumbersBrute(5));
+    System.out.println("Sum of Square Numbers: "+sumOfSquareNumbersBrute(3));
+    System.out.println("Sum of Square Numbers: "+sumOfSquareNumbersBrute(0));
+    System.out.println("Sum of Square Numbers: "+sumOfSquareNumbersOptimal(5));
+    System.out.println("Sum of Square Numbers: "+sumOfSquareNumbersOptimal(3));
+    System.out.println("Sum of Square Numbers: "+sumOfSquareNumbersOptimal(0));
+  }
+}
