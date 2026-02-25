@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      HashMap<String, Integer> map=new HashMap<>(); 
+      map.put("Reiek", 28);
+      map.put("Itanagr",18);
+      map.put("New York",58);
+      map.put("Toronto",23);
+      map.put("Tokyo",33);
+      map.put("Wellington",13);
+      map.put("Canberra",21);
+      map.put("Paris",21);
+      map.put("London",21);
+      map.put("Moscow",71);
+      System.out.println(map);
+      System.out.println(map.get("Moscow"));
+      System.out.println("Moscow contains: "+map.containsKey("Moscow"));
+      System.out.println(map.size());
+      map.remove("Canberra");
+      System.out.println(map.size());
+      
+      
+      
+      
+      //Method1: Using keySet()
+      //keySet() fetches key values from the HashMap
+      for(String key: map.keySet()){
+        System.out.println(key+" -> "+map.get(key));
+      }
+      System.out.println();
+      
+      
+      //Method2: Using entrySet()
+      //entrySet() fetches all key value pairs as a set while Entry being just an interface inside HashMap
+      for(HashMap.Entry<String, Integer> element: map.entrySet()){
+        System.out.println(element.getKey()+" : "+element.getValue());
+      }
+    }
+}
