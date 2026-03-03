@@ -36,7 +36,7 @@ class Main{
   }
   
   
-  
+  //Two Pointer Approach
   public static void doubleZerosOptimal(int[] nums){
     int zeros=0;
     for(int num:nums){
