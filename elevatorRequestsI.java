@@ -16,3 +16,4 @@ class Main {
         int[] requests={2,1,4,3};
         System.out.println("Total Time taken to complete the requests: "+elevatorRequests(5, requests));
     }
+}
