@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+        public static List<Integer> intersectionOfMultipleArrays(int[][] nums){
+            HashMap<Integer, Integer> map=new HashMap<>();
+            
+            for(int[] arr: nums){
+                for(int num: arr){
+                    map.put(num, map.getOrDefault(num, 0)+1);
+                }
+            }
+            
+            List<Integer> list=new ArrayList<>();
+            for(int key: map.keySet()){
+                if(map.get(key)==nums.length){
+                    list.add(key);
+                }
+            }
+            
+            Collections.sort(list);
+            return list;
+        }
+        public static void main(String ar[]){
+            int[][] nums={{3, 1, 2, 4, 5}, {1, 2, 3, 4}, {3, 4, 5, 6}};
+            List<Integer> result=intersectionOfMultipleArrays(nums);
+            System.out.println(result);
+        }
+    
+    }
