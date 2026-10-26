@@ -26,7 +26,7 @@ public class Main {
 
     }
     
-
+    //Without Using HashMap
     public static int[] intersectOne(int[] nums1, int[] nums2){
         Arrays.sort(nums1);
         Arrays.sort(nums2);
